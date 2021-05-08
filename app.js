@@ -44,7 +44,7 @@ function deleteCheck(event) {
 	//DELETE TODO
 	if (item.classList[0] === "trash-btn") {
 		const todo = item.parentElement;
-		//DELETE TODO from local storege
+		//DELETE TODO from local storage
 		deleteLocalTodo(todo);
 		// add transition fall animation
 		todo.classList.add("fall");
@@ -137,7 +137,7 @@ function deleteLocalTodo(todo) {
 	let localTodos = JSON.parse(localStorage.getItem("todos"));
 	// #2 get todo from the todo container on the dom
 	const todos = [...todoList.childNodes];
-	// locate todo on the dom and delete it from local storege
+	// locate todo on the dom and delete it from local storage
 	localTodos.splice(todos.indexOf(todo), 1);
 	localStorage.setItem("todos", JSON.stringify(localTodos));
 }
